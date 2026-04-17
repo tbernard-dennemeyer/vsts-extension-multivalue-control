@@ -18,12 +18,3 @@ export function serializeMultiValueFieldValue(values: string[]): string {
         .filter((value) => !!value)
         .join(";");
 }
-
-/**
- * Allowed-values picklists validate the entire stored field value.
- * Joining multiple values with ';' creates a single combined value that
- * will not exist in a single-select allowed-values list.
- */
-export function isAllowedValueCompatible(values: string[]): boolean {
-    return values.length <= 1;
-}
